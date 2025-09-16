@@ -6,7 +6,7 @@
 #    By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/27 12:20:17 by aimokhta          #+#    #+#              #
-#    Updated: 2025/09/16 11:16:53 by aimokhta         ###   ########.fr        #
+#    Updated: 2025/09/16 18:49:42 by aimokhta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,13 +20,18 @@ CFLAG = -Wall -Werror -Wextra -std=c++98 -g -O0 -fsanitize=address
 # valgrind --leak-check=full --show-leak-kinds=all
 # -g = gives error messages for debugging, needed by gdb / valgrind / helgrind
 
-SRC =	\
+INC_DIR = include
+INC = -I$(INC_DIR)
+SRC_DIR = src
+
+SRC =	$(addprefix $(SRC_DIR)/, \
 		main.cpp \
 		Animal.cpp \
 		Dog.cpp \
 		Cat.cpp \
 		WrongAnimal.cpp \
-		WrongCat.cpp
+		WrongCat.cpp \
+		Brain.cpp )
 
 OBJ_FOLDER = obj_files
 
@@ -47,7 +52,7 @@ $(NAME) : $(OBJ_SRC)
 
 $(OBJ_FOLDER)/%.o : %.cpp
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAG) -c $< -o $@
+	$(CC) $(CFLAG) $(INC) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ_FOLDER)
