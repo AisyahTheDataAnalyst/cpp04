@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:37:23 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/17 12:35:57 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/17 14:55:59 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Animal
 {
 	protected:
 		std::string type;
-		// Animal(); // method 1.
+		// Animal(); // method 1. constructor must be protected/private
 
 	public:
 		//OCF
@@ -37,8 +37,8 @@ class Animal
 		virtual ~Animal();
 		
 		// function member
-		virtual std::string getType() const = 0; // method 2: pure virtual → class is abstract
-		virtual void makeSound() const = 0; // method 2: pure virtual → class is abstract
+		virtual std::string getType() const;
+		virtual void makeSound() const = 0; // method 2: at least 1 pure virtual → class is abstract
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:40:22 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/17 12:50:06 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/17 14:55:04 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 	// [ virtual function vs pure virtual function ]
 	// -> virtual function = a fn declared with virtual allowing runtime polymorphism
 	// -> pure virtual function = a virtual fn that has no implementation in the base class
-	// ex: virtual void makeSound const = 0;
-	// '= 0' to an virtual fn makes it PURE VIRTUAL FN
+	// virtual fn(); → virtual function (optional override, base class can still be used).
+	// virtual fn() = 0; → pure virtual function → abstract class (blueprint only).
 	// C++98 -> enough by just making Animal public functions as pure virtual TO OVERRIDE
 	// C++98 -> keyword 'override' dosent exists
 	// C++11 -> derived class must 'override' this fn, otherwise it too become abstract
