@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:40:12 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/16 19:53:51 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/17 10:01:42 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,12 @@ void Dog::makeSound() const
 	std::cout << "Woof!" << std::endl;
 }
 
-// void Dog::setIdea( const std::string &newIdea ) const
-// {
-// 	dogBrain->setIdea(newIdea);
-// }
+void Dog::setIdea( const std::string &newIdea )
+{
+	dogBrain->setIdea(newIdea);
+}
 
-// std::string Dog::getIdea() const
-// {
-// 	return dogBrain->getIdea();
-// }
+std::string Dog::getIdea() const
+{
+	return dogBrain->getIdea();
+}

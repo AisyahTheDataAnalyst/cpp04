@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:40:00 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/16 19:53:45 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/17 10:01:38 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,12 @@ void Cat::makeSound() const
 	std::cout << "Meow!" << std::endl;
 }
 
-// void Cat::setIdea( const std::string &newIdea ) const
-// {
-// 	catBrain->setIdea(newIdea);
-// }
+void Cat::setIdea( const std::string &newIdea )
+{
+	catBrain->setIdea(newIdea);
+}
 
-// std::string Cat::getIdea() const
-// {
-// 	return catBrain->getIdea();
-// }
+std::string Cat::getIdea() const
+{
+	return catBrain->getIdea();
+}

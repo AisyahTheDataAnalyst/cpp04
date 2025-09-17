@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:38:01 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/16 19:29:12 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/17 10:01:07 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ class Cat: virtual public Animal
 		// function member
 		std::string getType() const;
 		void makeSound() const;
-		// void setIdea( const std::string &newIdea ) const;
-		// std::string getIdea() const;
+		void setIdea( const std::string &newIdea );
+		std::string getIdea() const;
 };
 
 #endif

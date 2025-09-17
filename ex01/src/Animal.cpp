@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:39:51 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/16 19:29:00 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/17 10:00:16 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,3 @@ void Animal::makeSound() const
 {
 	std::cout << "Generic animal sound" << std::endl;
 }
-
-// std::string Animal::getIdea() const
-// {
-// 	return (this->ideas[this->currIdeaCount]); ///////////////
-// }

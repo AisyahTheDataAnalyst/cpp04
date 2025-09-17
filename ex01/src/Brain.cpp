@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 15:39:11 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/16 19:29:20 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/17 10:01:33 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,12 @@ Brain::~Brain()
 
 // setter & getter
 
-// void Brain::setIdea( const std::string &newIdea ) const
-// {
-// 	this->ideas[this->currIdeaCount] = newIdea;
-// }
+void Brain::setIdea( const std::string &newIdea )
+{
+	this->ideas[this->currIdeaCount] = newIdea;
+}
 
-// std::string Brain::getIdea() const
-// {
-// 	return (this->ideas[this->currIdeaCount]); ///////////////
-// }
+std::string Brain::getIdea() const
+{
+	return (this->ideas[this->currIdeaCount]); ///////////////
+}

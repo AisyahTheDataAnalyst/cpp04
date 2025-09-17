@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:40:22 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/16 19:52:53 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/17 10:31:19 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,41 @@
 
 int main ()
 {
+	// A single Animal object
+	std::cout << "[A single Animal object]" << std::endl;
+	std::cout << "---------Dog---------" << std::endl;
 	const Animal *j = new Dog();
-	const Animal *i = new Cat();
-
+	std::cout << std::endl;
 	delete j;
-	delete i;
+	std::cout << std::endl;
 
-	std::cout << BLUE << "\n----------Constructors----------" << RESET << std::endl;
+	std::cout << "-----------Cat----------" << std::endl;
+	const Animal *i = new Cat();
+	std::cout << std::endl;
+	delete i;
+	std::cout << std::endl;
+
+
+
+	// An array of Animal objects
+	std::cout << "\n_________________________________________" << std::endl;
+	std::cout << "\n[An array of Animal object]" << std::endl;
+	std::cout << BLUE << "----------Constructors----------" << RESET << std::endl;
 	const Animal *a[10];
-	for(int i = 0; i < 5; i++)
+	for(int i = 0; i < 10; i++)
 	{
-		std::cout << CYAN << "Animal" << i << ":" << RESET << std::endl;
-		a[i] = new Dog();
-		std::cout << std::endl;
-	}
-	for(int i = 5; i < 10; i++)
-	{
-		std::cout << CYAN << "Animal" << i << ":" << RESET << std::endl;
-		a[i] = new Cat();
-		std::cout << std::endl;
+		if (i < 5)
+		{
+			std::cout << CYAN << "Animal" << i << ":" << RESET << std::endl;
+			a[i] = new Dog();
+			std::cout << std::endl;
+		}
+		else
+		{
+			std::cout << CYAN << "Animal" << i << ":" << RESET << std::endl;
+			a[i] = new Cat();
+			std::cout << std::endl;
+		}
 	}
 
 	std::cout << RED << "----------Destructors----------" << RESET << std::endl;
@@ -45,22 +61,32 @@ int main ()
 		std::cout << std::endl;
 	}
 
-	// std::cout << "\nOriginal ideas:" << std::endl;
-	// std::cout << "\nDog:" << std::endl;
-	// j->getIdea();
-	// std::cout << "\nCat:" << std::endl;
-	// i->getIdea();
-	// std::cout << std::endl;
-
-	// std::cout << "\nModified ideas:" << std::endl;
-	// std::cout << "\nDog:" << std::endl;
-	// j->setIdea("I want a dog house");
-	// j->getIdea();
-	// std::cout << "\nCat:" << std::endl;
-	// i->setIdea("I want to eat a fish");
-	// i->getIdea();
 
 
+	// setters & getters
+	// cannot do on Animal object to get ideas
+	// cannot do setters on const objects which should be modified
+	// ------------dog
+	std::cout << "\n_________________________________________" << std::endl;
+	std::cout << "\n[Setters & Getters]" << std::endl;
+	std::cout << "Dog" << std::endl;
+
+	Dog dog;
+
+	std::cout << "Type of animal: " << dog.getType() << std::endl;
+	std::cout << "Original idea: " << dog.getIdea() << std::endl;
+	dog.setIdea("I want a dog house");
+	std::cout << "New idea: " << dog.getIdea() << std::endl;
+
+	// -------------cat
+	std::cout << "\nCat" << std::endl;
+
+	Cat cat;
+
+	std::cout << "Type of animal: " << cat.getType() << std::endl;
+	std::cout << "Original idea: " << cat.getIdea() << std::endl;
+	cat.setIdea("I want to eat fish");
+	std::cout << "New idea: " << cat.getIdea() << "\n" << std::endl;
 	
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:37:23 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/16 19:52:47 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/17 10:00:28 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ class Animal
 		// function member
 		virtual std::string getType() const;
 		virtual void makeSound() const;
-		// virtual void setIdea( const std::string &newIdea ) const;
-		// virtual std::string getIdea() const;
 };
 
 #endif
