@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 15:11:10 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/17 15:17:43 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/18 14:14:30 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 //interface class
 class ICharacter
 {
-	private:
-
 	public:
 		virtual ~ICharacter() {}
 		virtual std::string const &getName() const = 0;
