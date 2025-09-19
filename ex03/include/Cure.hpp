@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 16:20:22 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/18 11:11:37 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/19 18:39:06 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 class Cure : virtual public AMateria
 {
-	private:
-		std::string _type;
+	// private:
+	// 	std::string _type;
 		
 	public:
 		// OCF
@@ -28,6 +28,7 @@ class Cure : virtual public AMateria
 		~Cure();
 
 		// member fn
+		std::string const &getType() const;
 		Cure *clone() const;
 		void use(ICharacter &target);
 };

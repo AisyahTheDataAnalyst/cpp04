@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 11:07:55 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/18 17:21:20 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/19 18:40:26 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 // OCF
 
-Ice::Ice() : AMateria(), _type("ice") {}
-// {
-// 	this->_type = "ice";
-// }
+Ice::Ice() : AMateria("ice") {}
 		
 Ice::Ice(const Ice &other)
 {
@@ -37,6 +34,11 @@ Ice::~Ice() {}
 
 // member functions:
 
+std::string const &Ice::getType() const
+{
+	return this->_type;
+}
+
 Ice *Ice::clone() const
 {
 	return new Ice;
@@ -44,5 +46,5 @@ Ice *Ice::clone() const
 
 void Ice::use(ICharacter &target)
 {
-	std::cout << "* heals " << target.getName << "'s wounds *" << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

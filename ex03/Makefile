@@ -6,7 +6,7 @@
 #    By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/27 12:20:17 by aimokhta          #+#    #+#              #
-#    Updated: 2025/09/17 15:07:11 by aimokhta         ###   ########.fr        #
+#    Updated: 2025/09/19 15:54:26 by aimokhta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,12 @@ INC = -I$(INC_DIR)
 SRC_DIR = src
 
 SRC =	$(addprefix $(SRC_DIR)/, \
-		main.cpp \
 		AMateria.cpp \
-		ICharacter.cpp \
-		IMateria.cpp )
+		Character.cpp \
+		Cure.cpp \
+		Ice.cpp \
+		main.cpp \
+		MateriaSource.cpp )
 
 OBJ_FOLDER = obj_files
 

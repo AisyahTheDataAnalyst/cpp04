@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 15:07:19 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/18 11:38:34 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/19 16:04:31 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,14 @@ class AMateria
 {
 	protected:
 		std::string _type;
+		AMateria();
 
 	public:
 		//OCF
 		AMateria(std::string const &type);
 		AMateria(const AMateria &other);
 		AMateria &operator=(const AMateria &other);
-		~AMateria();
+		virtual ~AMateria();
 
 		//function member
 		std::string const &getType() const; //Returns the materia type

@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 16:19:55 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/18 18:04:49 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/19 19:15:58 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ class Character : public ICharacter
 {
 	private:
 		AMateria *_inventory[MAX_INVENTORY];
+		AMateria **_unequipStorage;
+		int _unequipCounter;
 		std::string _name;
-		int _idx;
-		static int _currIdx;
 
 	public:
 		// OCF
-		Character(std::string &name);
+		Character(const std::string &name);
 		Character(const Character &other); // must be DEEP , must delete the Materias of Character before new one are added to their inventory
 		Character &operator=(const Character &other); // must be DEEP, must delete the Materias of Character before new one are added to their inventory
 		~Character(); // Materias must be deleted when Character is destroyed

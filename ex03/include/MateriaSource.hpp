@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 16:21:24 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/18 19:36:51 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/19 16:27:14 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ class MateriaSource: public IMateriaSource
 {
 	private:
 		AMateria *_inventory[4];
-		static int _currIdx;
-		int _idx;
 
 	public:
 		// OCF
@@ -34,8 +32,8 @@ class MateriaSource: public IMateriaSource
 		AMateria *createMateria(std::string const &type); 
 		// returns a new Materia. 
 		// The latter is a copy of the Materia previously learned by
-		// the MateriaSource whose type equals the one passed as parameter. Returns 0 if
-		// the type is unknown.
+		// the MateriaSource whose type equals the one passed as parameter. 
+		// Returns 0 if the type is unknown.
 };
 
 
