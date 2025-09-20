@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:40:12 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/16 10:46:22 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/20 11:06:58 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 // OCF
 
 // for default constructor, compiler will automatically calls base default constructor if you dont specify it in the initializer list - still working the same
-Dog::Dog() : Animal(), type("dog")
+Dog::Dog() : Animal()
 {
+	this->type = "Dog";
 	std::cout << "Dog: Default constructor called" << std::endl;
 }
 

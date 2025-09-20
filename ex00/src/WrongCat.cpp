@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:40:00 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/16 10:58:00 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/20 11:07:39 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 // OCF
 
 // for default constructor, compiler will automatically calls base default constructor if you dont specify it in the initializer list - still working the same
-WrongCat::WrongCat() : WrongAnimal(), type("definitely not a cat")
+WrongCat::WrongCat() : WrongAnimal()
 {
+	this->type = "definitely not a cat";
 	std::cout << "WrongCat: Default constructor called" << std::endl;
 }
 

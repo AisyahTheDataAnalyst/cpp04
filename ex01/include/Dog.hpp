@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:38:52 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/17 10:01:03 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/20 11:23:54 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 class Dog: virtual public Animal
 {
 	private:
-		std::string type;
 		Brain *dogBrain;
 
 	public:

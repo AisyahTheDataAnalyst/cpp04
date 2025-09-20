@@ -6,7 +6,7 @@
 #    By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/27 12:20:17 by aimokhta          #+#    #+#              #
-#    Updated: 2025/09/17 09:54:05 by aimokhta         ###   ########.fr        #
+#    Updated: 2025/09/20 14:16:00 by aimokhta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,11 +26,9 @@ SRC_DIR = src
 
 SRC =	$(addprefix $(SRC_DIR)/, \
 		main.cpp \
-		Animal.cpp \
+		AAnimal.cpp \
 		Dog.cpp \
 		Cat.cpp \
-		WrongAnimal.cpp \
-		WrongCat.cpp \
 		Brain.cpp )
 
 OBJ_FOLDER = obj_files

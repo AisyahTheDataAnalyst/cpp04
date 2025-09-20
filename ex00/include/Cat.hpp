@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:38:01 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/16 10:35:32 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/20 11:05:05 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 
 class Cat: virtual public Animal
 {
-	private:
-		std::string type;
-
 	public:
 		//OCF
 		Cat();

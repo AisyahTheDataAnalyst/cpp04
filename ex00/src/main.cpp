@@ -6,13 +6,14 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:40:22 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/16 11:39:46 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/20 11:15:50 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "WrongCat.hpp"
+#include "Animal.hpp"
 
 int main ()
 {

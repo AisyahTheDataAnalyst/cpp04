@@ -6,20 +6,21 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:38:52 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/17 12:37:11 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/20 14:27:58 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 # define DOG_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
-class Dog: virtual public Animal
+// to make derived class also not abstract class
+// , must implement every pure virtual fn in abstract base class
+class Dog: virtual public AAnimal
 {
 	private:
-		std::string type;
 		Brain *dogBrain;
 
 	public:
@@ -31,7 +32,7 @@ class Dog: virtual public Animal
 		
 		// function member
 		std::string getType() const;
-		void makeSound() const;
+		void makeSound() const; // if this is commented or not implemented, auto this class will be abstract class
 		void setIdea( const std::string &newIdea );
 		std::string getIdea() const;
 };

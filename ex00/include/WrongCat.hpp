@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:38:01 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/16 11:01:50 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/20 11:05:53 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 
 class WrongCat: public WrongAnimal
 {
-	private:
-		std::string type;
-
 	public:
 		//OCF
 		WrongCat();

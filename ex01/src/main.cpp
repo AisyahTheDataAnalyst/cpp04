@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:40:22 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/17 10:31:19 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/20 14:04:41 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,27 @@ int main ()
 	cat.setIdea("I want to eat fish");
 	std::cout << "New idea: " << cat.getIdea() << "\n" << std::endl;
 	
+
+	// deep copies demonstration
+	std::cout << "\n_________________________________________" << std::endl;
+	std::cout << "\n[Deep copies demonstration]" << std::endl;
+	std::cout << "Dog_copy:" << std::endl;
+
+	Dog dogCopy;
+	std::cout << "\nCopy assignment operator on dog_copy:" << std::endl;
+	dogCopy = dog;
+	std::cout << "\nOriginal idea: " << dogCopy.getIdea() << std::endl;
+	dogCopy.setIdea("I want delicious treats");
+	std::cout << "New idea: " << dogCopy.getIdea() << std::endl;
+
+
+	std::cout << "\n\nCat_copy:" << std::endl;
+
+	Cat catCopy;
+	std::cout << "\nCopy assignment operator on cat_copy:" << std::endl;
+	catCopy = cat;
+	std::cout << "\nOriginal idea: " << catCopy.getIdea() << std::endl;
+	catCopy.setIdea("I want catnip");
+	std::cout << "New idea: " << catCopy.getIdea() << "\n" << std::endl;
 	return 0;
 }
