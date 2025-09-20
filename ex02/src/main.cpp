@@ -6,12 +6,13 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:40:22 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/20 14:15:44 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/20 14:52:24 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "AAnimal.hpp"
 
 	// to make Animal class not instantiable 
 	// - 2 ways in C++98, adjustments in .hpp only
@@ -36,7 +37,7 @@
 
 int main ()
 {
-	// Animal c; // has pure virtual function = becaome an abstract class now
+	// AAnimal c; // has pure virtual function = becaome an abstract class now
 	// c.getType();
 	// c.makeSound();
 
