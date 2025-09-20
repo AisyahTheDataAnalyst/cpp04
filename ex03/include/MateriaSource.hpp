@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 16:21:24 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/19 16:27:14 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/20 16:29:22 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 # define MATERIASOURCE_HPP
 
 # include "IMateriaSource.hpp"
+# define MAX_INVENTORY 4
 
 class MateriaSource: public IMateriaSource
 {
 	private:
-		AMateria *_inventory[4];
+		AMateria *_inventory[MAX_INVENTORY];
 
 	public:
 		// OCF

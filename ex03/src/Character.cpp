@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 17:54:33 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/19 19:26:16 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/20 16:28:51 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 
 Character::Character(const std::string &name) : _unequipCounter(0), _name(name)
 {
-	for(int i = 0; i < 4; i++)
+	for(int i = 0; i < MAX_INVENTORY; i++)
 		this->_inventory[i] = NULL;
+
 	this->_unequipStorage = new AMateria *[1000];
 	for(int i = 0; i < 1000; i++)
 		this->_unequipStorage[i] = NULL;
@@ -25,6 +26,15 @@ Character::Character(const std::string &name) : _unequipCounter(0), _name(name)
 		
 Character::Character(const Character &other)
 {
+	for(int i = 0; i < MAX_INVENTORY; i++)
+		this->_inventory[i] = NULL;
+
+	this->_unequipStorage = new AMateria *[1000];
+	for(int i = 0; i < 1000; i++)
+		this->_unequipStorage[i] = NULL;
+
+	this->_unequipCounter = 0;
+
 	*this = other;
 }
 
@@ -33,25 +43,26 @@ Character &Character::operator=(const Character &other)
 	if (this != &other)
 	{
 		this->_name = other._name;
-		for(int i = 0; i < 4; i++)
+		
+		for(int i = 0; i < MAX_INVENTORY; i++)
 		{
-			delete this->_inventory[i];
-			this->_inventory[i] = NULL;
 			if (other._inventory[i])
 				this->_inventory[i] = other._inventory[i]->clone();	
 			else
 				this->_inventory[i] = NULL;
 		}
-		for(int i = 0; i < this->_unequipCounter; i++)
-			delete this->_unequipStorage[i];
-		this->_unequipCounter = 0;
+
+		for(int i = 0; i < other._unequipCounter; i++)
+			this->_unequipStorage[i] = other._unequipStorage[i]->clone();
+
+		this->_unequipCounter = other._unequipCounter;
 	}
 	return *this;
 }
 
 Character::~Character() 
 {
-	for(int i = 0; i < 4; i++)
+	for(int i = 0; i < MAX_INVENTORY; i++)
 		delete this->_inventory[i];
 	for(int i = 0; i < _unequipCounter; i++)
 		delete this->_unequipStorage[i];
@@ -70,7 +81,7 @@ std::string const &Character::getName() const
 
 void Character::equip(AMateria *m) // equip in the 1st empty slot
 {
-	for(int i = 0; i < 4; i++)
+	for(int i = 0; i < MAX_INVENTORY; i++)
 	{
 		if (this->_inventory[i] == NULL)
 		{
@@ -78,6 +89,7 @@ void Character::equip(AMateria *m) // equip in the 1st empty slot
 			return ;
 		}
 	}
+	delete m;
 }
 
 void Character::unequip(int idx) // should not delete Materia

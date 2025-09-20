@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 16:19:55 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/19 19:15:58 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/20 15:04:44 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Character : public ICharacter
 		AMateria **_unequipStorage;
 		int _unequipCounter;
 		std::string _name;
+		Character();
 
 	public:
 		// OCF

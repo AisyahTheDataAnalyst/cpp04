@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 13:26:16 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/19 18:35:20 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/20 16:29:33 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 MateriaSource::MateriaSource() 
 {
-	for(int i = 0; i < 4; i++)
+	for(int i = 0; i < MAX_INVENTORY; i++)
 		this->_inventory[i] = NULL;
 }
 		
@@ -29,7 +29,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 {
 	if (this != &other)
 	{
-		for(int i = 0; i < 4; i++)
+		for(int i = 0; i < MAX_INVENTORY; i++)
 			this->_inventory[i] = other._inventory[i];
 	}
 	return *this;
@@ -37,7 +37,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 
 MateriaSource::~MateriaSource() 
 {
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < MAX_INVENTORY; i++)
 		delete this->_inventory[i];
 }
 
@@ -45,12 +45,12 @@ MateriaSource::~MateriaSource()
 
 // member functions:
 
-// copies the Materia passed as param, stores in memory so it can be cloned later
+// copies the Materia passed as param, stores in memory so it can be cloned later in createMateria()
 void MateriaSource::learnMateria(AMateria *m)
 {
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < MAX_INVENTORY; i++)
 	{
-		if (this->_inventory[i] == NULL)
+		if (this->_inventory[i] == NULL) // && this->_inventory[i] != m)
 		{
 			this->_inventory[i] = m;
 			return ;
@@ -60,7 +60,7 @@ void MateriaSource::learnMateria(AMateria *m)
 
 AMateria *MateriaSource::createMateria(std::string const &type)
 {
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < MAX_INVENTORY; i++)
 	{
 		if (this->_inventory[i] != NULL && type == this->_inventory[i]->getType())
 			return this->_inventory[i]->clone();

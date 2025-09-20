@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 16:20:22 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/19 18:39:06 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/20 14:57:15 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 
 class Cure : virtual public AMateria
 {
-	// private:
-	// 	std::string _type;
-		
 	public:
 		// OCF
 		Cure();

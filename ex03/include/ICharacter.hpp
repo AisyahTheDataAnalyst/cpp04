@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 15:11:10 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/19 16:03:28 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/20 15:01:09 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <string>
 
-class AMateria;
+class AMateria; //forward declaration - to avoid circular references
 
 //interface class
 class ICharacter
