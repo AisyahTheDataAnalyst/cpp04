@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 13:26:16 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/20 16:29:33 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/24 13:12:47 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void MateriaSource::learnMateria(AMateria *m)
 			return ;
 		}
 	}
+	delete m;
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type)

@@ -6,18 +6,16 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 15:39:11 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/20 13:49:01 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/24 09:00:23 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-int Brain::ideaCount = 0;
-
 // OCF
 
 Brain::Brain() 
-// : ideas[ideaCount]("Random thoughts"), currIdeaCount(ideaCount)
+// : ideas[0]("Random thoughts")
 // connot do at initializer list 
 // because youre doing a single element of an array, 
 // when you should do it for entire members not parts of them only
@@ -29,9 +27,9 @@ Brain::Brain()
 	// 	this->ideas[i] = "";
 	// above is redundant, default constructor of std::string's class defines them as empty string ("") already
 	// when you create an array of std::string, each one is default-constructed
-	this->ideas[ideaCount] = "Random thoughts";
-	this->currIdeaCount = ideaCount;
-	++ideaCount;
+	this->ideas[0] = "Random thoughts 1";
+	this->ideas[1] = "Random thoughts 2";
+	this->ideas[2] = "Random thoughts 3";
 }
 
 Brain::Brain( const Brain &other )
@@ -48,9 +46,6 @@ Brain &Brain::operator=( const Brain &other )
 		// this->ideas[100] = other.ideas[100]; - SEGV, not specific to each of the slots
 		for (int i = 0; i < 100; i++)
 			this->ideas[i] = other.ideas[i];
-		this->currIdeaCount = other.currIdeaCount;
-		// this->ideaCount = other.ideaCount;
-		Brain::ideaCount = other.ideaCount;
 	}
 	return *this;
 }
@@ -62,12 +57,12 @@ Brain::~Brain()
 
 // setter & getter
 
-void Brain::setIdea( const std::string &newIdea )
+void Brain::setIdea(int idx, const std::string &newIdea)
 {
-	this->ideas[this->currIdeaCount] = newIdea;
+	this->ideas[idx] = newIdea;
 }
 
-std::string Brain::getIdea() const
+std::string Brain::getIdea( int idx ) const
 {
-	return (this->ideas[this->currIdeaCount]);
+	return (this->ideas[idx]);
 }

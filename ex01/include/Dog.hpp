@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:38:52 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/20 11:23:54 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/24 08:59:34 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class Dog: virtual public Animal
+class Dog: public Animal
 {
 	private:
 		Brain *dogBrain;
@@ -31,8 +31,8 @@ class Dog: virtual public Animal
 		// function member
 		std::string getType() const;
 		void makeSound() const;
-		void setIdea( const std::string &newIdea );
-		std::string getIdea() const;
+		void setIdea( int idx, const std::string &newIdea );
+		std::string getIdea(int idx) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:38:01 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/20 17:23:48 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/24 10:42:26 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "Animal.hpp"
 
-class Cat: virtual public Animal
+class Cat: public Animal
 {
 	public:
 		//OCF

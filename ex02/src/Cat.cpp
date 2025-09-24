@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:40:00 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/20 14:15:25 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/24 13:02:09 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // OCF
 
 // for default constructor, compiler will automatically calls base default constructor if you dont specify it in the initializer list - still working the same
-Cat::Cat() : AAnimal()
+Cat::Cat()
 {
 	std::cout << "Cat: Default constructor called" << std::endl;
 	this->type = "Cat";
@@ -25,6 +25,7 @@ Cat::Cat() : AAnimal()
 Cat::Cat( const Cat &other )
 {
 	std::cout << "Cat: Copy constructor called" << std::endl;
+	catBrain = new Brain();
 	*this = other;
 }
 
@@ -34,9 +35,7 @@ Cat &Cat::operator=( const Cat &other )
 	if (this != &other)
 	{
 		this->type = other.type;
-		delete this->catBrain; // calls Brain's Destructor
-		this->catBrain = new Brain(*other.catBrain);  // calls Brain's Copy constructor
-		// deep copy = each object has its own Brain on the heap, copying other's Brain, not both point on the same Brain.
+		*this->catBrain = *other.catBrain;  // calls Brain's Copy assignment constructor
 	}
 	return *this;
 }
@@ -61,12 +60,15 @@ void Cat::makeSound() const
 	std::cout << "Meow!" << std::endl;
 }
 
-void Cat::setIdea( const std::string &newIdea )
+void Cat::setIdea( int idx, const std::string &newIdea )
 {
-	catBrain->setIdea(newIdea);
+	if (idx >= 0 && idx < 100)
+		catBrain->setIdea(idx, newIdea);
 }
 
-std::string Cat::getIdea() const
+std::string Cat::getIdea(int idx) const
 {
-	return catBrain->getIdea();
+	if (idx >= 0 && idx < 100)
+		return catBrain->getIdea(idx);
+	return "[invalid index]";
 }

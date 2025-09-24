@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 15:04:55 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/17 10:01:13 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/24 08:58:53 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ class Brain
 {
 	private:
 		std::string ideas[100];
-		static int ideaCount;
-		int currIdeaCount;
 
 	public:
 		Brain();
@@ -29,8 +27,8 @@ class Brain
 		Brain &operator=( const Brain &other );
 		~Brain();
 		// setter & getter
-		void setIdea( const std::string &newIdea );
-		std::string getIdea() const;
+		void setIdea( int idx, const std::string &newIdea );
+		std::string getIdea( int idx ) const;
 };
 
 #endif

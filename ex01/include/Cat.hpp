@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:38:01 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/20 11:23:49 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/24 08:59:23 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "Animal.hpp"
 # include "Brain.hpp" // another way to include another class other than the inheritance way
 
-class Cat: virtual public Animal
+class Cat: public Animal
 {
 	private:
 		Brain *catBrain; // another way to include another class other than the inheritance way
@@ -31,8 +31,8 @@ class Cat: virtual public Animal
 		// function member
 		std::string getType() const;
 		void makeSound() const;
-		void setIdea( const std::string &newIdea );
-		std::string getIdea() const;
+		void setIdea( int idx, const std::string &newIdea );
+		std::string getIdea(int idx) const;
 };
 
 #endif

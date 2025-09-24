@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:40:12 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/20 14:15:34 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/24 13:06:49 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // OCF
 
 // for default constructor, compiler will automatically calls base default constructor if you dont specify it in the initializer list - still working the same
-Dog::Dog() : AAnimal()
+Dog::Dog()
 {
 	std::cout << "Dog: Default constructor called" << std::endl;
 	this->type = "Dog";
@@ -25,6 +25,7 @@ Dog::Dog() : AAnimal()
 Dog::Dog( const Dog &other )
 {
 	std::cout << "Dog: Copy constructor called" << std::endl;
+	dogBrain = new Brain();
 	*this = other;
 }
 
@@ -34,10 +35,7 @@ Dog &Dog::operator=( const Dog &other )
 	if (this != &other)
 	{
 		this->type = other.type;
-		delete this->dogBrain; // called Brain's Destructor
-		this->dogBrain = new Brain(*other.dogBrain); // call Brain's Copy constructor
-		// deep copy = each object has its own Brain on the heap, copying other's Brain, not both point on the same Brain.
-
+		*this->dogBrain = *other.dogBrain; // calls Brain's Copy assignment constructor
 	}
 	return *this;
 }
@@ -60,12 +58,15 @@ void Dog::makeSound() const
 	std::cout << "Woof!" << std::endl;
 }
 
-void Dog::setIdea( const std::string &newIdea )
+void Dog::setIdea( int idx, const std::string &newIdea )
 {
-	dogBrain->setIdea(newIdea);
+	if (idx >= 0 && idx < 100)
+		dogBrain->setIdea(idx, newIdea);
 }
 
-std::string Dog::getIdea() const
+std::string Dog::getIdea(int idx) const
 {
-	return dogBrain->getIdea();
+	if (idx >= 0 && idx < 100)
+		return dogBrain->getIdea(idx);
+	return "[invalid index]";
 }

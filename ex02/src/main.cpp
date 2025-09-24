@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 09:40:22 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/20 14:52:24 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/24 13:08:27 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,12 @@ int main ()
 	// AAnimal c; // has pure virtual function = becaome an abstract class now
 	// c.getType();
 	// c.makeSound();
+
+	AAnimal *c = new Dog; // has pure virtual function = becaome an abstract class now
+	c->getType();
+	c->makeSound();
+	delete c;
+	std::cout << std::endl;
 
 	std::cout << "---Dog---" << std::endl;
 	Dog a;

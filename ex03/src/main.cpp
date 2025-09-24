@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 15:18:33 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/20 16:09:03 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/24 13:11:34 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int main()
 {
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	src->learnMateria(new Cure());
+	src->learnMateria(new Cure());
 	src->learnMateria(new Cure());
 
 	ICharacter* me = new Character("me"); // the character that stores the slots
