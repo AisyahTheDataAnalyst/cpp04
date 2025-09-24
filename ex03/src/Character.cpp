@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 17:54:33 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/24 13:56:48 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/24 14:01:06 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void Character::equip(AMateria *m) // equip in the 1st empty slot
 
 void Character::unequip(int idx) // should not delete Materia
 {
-	if (idx >= 0 && idx < 4 && this->_inventory[idx] != NULL)
+	if (idx >= 0 && idx < MAX_INVENTORY && this->_inventory[idx] != NULL)
 	{
 		this->_unequipStorage[_unequipCounter++] = this->_inventory[idx];
 		this->_inventory[idx] = NULL;
@@ -112,6 +112,6 @@ void Character::unequip(int idx) // should not delete Materia
 
 void Character::use(int idx, ICharacter &target)
 {
-	if (idx >= 0 && idx < 4 && this->_inventory[idx] != NULL)
+	if (idx >= 0 && idx < MAX_INVENTORY && this->_inventory[idx] != NULL)
 		this->_inventory[idx]->use(target);
 }
