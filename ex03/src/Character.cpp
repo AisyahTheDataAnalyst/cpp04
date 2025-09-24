@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 17:54:33 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/20 16:28:51 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/24 13:56:48 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ Character &Character::operator=(const Character &other)
 		
 		for(int i = 0; i < MAX_INVENTORY; i++)
 		{
+			if (this->_inventory[i])
+				delete this->_inventory[i];
 			if (other._inventory[i])
 				this->_inventory[i] = other._inventory[i]->clone();	
 			else
@@ -53,7 +55,14 @@ Character &Character::operator=(const Character &other)
 		}
 
 		for(int i = 0; i < other._unequipCounter; i++)
-			this->_unequipStorage[i] = other._unequipStorage[i]->clone();
+		{
+			if (this->_unequipStorage[i])
+				delete this->_unequipStorage[i];
+			if (other._unequipStorage[i])
+				this->_unequipStorage[i] = other._unequipStorage[i]->clone();
+			else
+				this->_unequipStorage[i] = NULL;
+		}
 
 		this->_unequipCounter = other._unequipCounter;
 	}

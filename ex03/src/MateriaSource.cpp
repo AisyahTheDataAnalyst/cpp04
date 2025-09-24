@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 13:26:16 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/24 13:35:05 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/24 13:58:24 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,14 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 	if (this != &other)
 	{
 		for(int i = 0; i < MAX_INVENTORY; i++)
-			this->_inventory[i] = other._inventory[i]->clone();
+		{
+			if (this->_inventory[i])
+				delete this->_inventory[i];
+			if (other._inventory[i])
+				this->_inventory[i] = other._inventory[i]->clone();
+			else
+				this->_inventory[i] = NULL;
+		}
 	}
 	return *this;
 }
@@ -47,7 +54,7 @@ MateriaSource::~MateriaSource()
 
 // member functions:
 
-// copies the Materia passed as param, stores in memory so it can be cloned later in createMateria()
+// store the new AMateria pointer passed as param, stores in memory so it can be cloned later in createMateria()
 void MateriaSource::learnMateria(AMateria *m)
 {
 	for (int i = 0; i < MAX_INVENTORY; i++)
