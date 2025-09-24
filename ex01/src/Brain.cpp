@@ -6,7 +6,7 @@
 /*   By: aimokhta <aimokhta@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 15:39:11 by aimokhta          #+#    #+#             */
-/*   Updated: 2025/09/24 09:00:23 by aimokhta         ###   ########.fr       */
+/*   Updated: 2025/09/24 14:08:23 by aimokhta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,13 @@ Brain::~Brain()
 
 void Brain::setIdea(int idx, const std::string &newIdea)
 {
-	this->ideas[idx] = newIdea;
+	if (idx >= 0 && idx < 100)
+		this->ideas[idx] = newIdea;
 }
 
 std::string Brain::getIdea( int idx ) const
 {
-	return (this->ideas[idx]);
+	if (idx >= 0 && idx < 100)
+		return (this->ideas[idx]);
+	return "[invalid index]";
 }
